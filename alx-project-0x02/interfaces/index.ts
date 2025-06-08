@@ -1,3 +1,4 @@
-export interface HeaderProps {
-  //contents
+export interface CardProps {
+  title: string;
+  content: string
 }
