@@ -3,8 +3,11 @@ export interface CardProps {
   content: string
 }
 
+export type ButtonSize = 'small' | 'medium' | 'large';
+export type ButtonShape = 'rounded-sm' | 'rounded-md' | 'rounded-full';
+
 export interface ButtonProps {
-  size: 'small' | 'medium' | 'large';
-  shape: 'rounded-sm' | 'rounded-md' | 'rounded-full';
+  size: ButtonSize;
+  shape: ButtonShape;
   children: React.ReactNode;
 }
