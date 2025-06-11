@@ -6,7 +6,7 @@ export default function Header() {
       <div className="flex space-x-12">
         <Link href="/home" className="text-gray-800 hover:text-gray-600">Home</Link>
         <Link href="/about" className="text-gray-800 hover:text-gray-600">About</Link>
-        <Link href="/PostalModal" className="text-gray-800 hover:text-gray-600">Posts</Link>
+        <Link href="/posts" className="text-gray-800 hover:text-gray-600">Posts</Link>
       </div>
     </nav>
   );
