@@ -1,7 +1,6 @@
 // pages/users.tsx
 import Header from '@/components/layout/Header';
 import UserCard from '@/components/common/UserCard';
-import { GetStaticProps } from 'next';
 
 interface User {
   id: number;
@@ -17,7 +16,7 @@ interface UsersPageProps {
   users: User[];
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export async function getStaticProps() {
   const res = await fetch('https://jsonplaceholder.typicode.com/users');
   const users: User[] = await res.json();
 
@@ -26,7 +25,7 @@ export const getStaticProps: GetStaticProps = async () => {
       users,
     },
   };
-};
+}
 
 export default function UsersPage({ users }: UsersPageProps) {
   return (
