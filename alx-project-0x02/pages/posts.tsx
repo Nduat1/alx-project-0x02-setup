@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+// pages/posts.tsx
 import Header from '@/components/layout/Header';
 import PostCard from '@/components/common/PostCard';
+import { type GetStaticProps } from 'next';
 
 interface Post {
   id: number;
@@ -9,15 +10,22 @@ interface Post {
   userId: number;
 }
 
-export default function PostsPage() {
-  const [posts, setPosts] = useState<Post[]>([]);
+interface PostsPageProps {
+  posts: Post[];
+}
 
-  useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-      .then((res) => res.json())
-      .then((data) => setPosts(data));
-  }, []);
+export const getStaticProps: GetStaticProps = async () => {
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const posts: Post[] = await res.json();
 
+  return {
+    props: {
+      posts,
+    },
+  };
+};
+
+export default function PostsPage({ posts }: PostsPageProps) {
   return (
     <>
       <Header />
