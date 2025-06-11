@@ -7,6 +7,7 @@ export default function Header() {
         <Link href="/home" className="text-gray-800 hover:text-gray-600">Home</Link>
         <Link href="/about" className="text-gray-800 hover:text-gray-600">About</Link>
         <Link href="/posts" className="text-gray-800 hover:text-gray-600">Posts</Link>
+        <Link href="/users" className="text-gray-800 hover:text-gray-600">Users</Link>
       </div>
     </nav>
   );
